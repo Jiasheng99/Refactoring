@@ -108,6 +108,12 @@ class TestClientInforme {
 		assertEquals(clientInforme5, clientLuxe.informe());
 	}	
 
+	@Test
+	public void ComprovaNewInforme() throws ParseException {
+		clientLuxe = new Client("X5189927T", "Jiasheng", "695519611");
+		System.out.println(clientLuxe.informe());
+	}
+	
 	public static void main(String args[]) {
         org.junit.runner.JUnitCore.main("TestClientInforme");
         
