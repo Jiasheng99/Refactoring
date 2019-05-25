@@ -59,6 +59,15 @@ public class Lloguer {
         return quantitat;
     }
 	
+    public int bonificacions() {
+        int bonificacions = 1;
+    	if (getVehicle().getCategoria() == Vehicle.LUXE &&
+                getDies()>1 ) {
+            bonificacions ++;
+        }
+		return bonificacions;
+    }
+	
 	@Override
 	public String toString() {
 		return "Lloguer [data=" + data + ", dies=" + dies + ", vehicle=" + vehicle + "]";
