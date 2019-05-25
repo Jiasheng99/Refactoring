@@ -1,0 +1,24 @@
+## Fitxers a ignorar pel Git
+
+# Fitxers d'edició
+*~
+
+# Fitxers intermitjos
+*.[oa]
+*.class
+*.pyc
+
+# paquets i comprimits
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.tar.gz
+*.zip
+
+# contingut de directoris complets
+build/
+tmp/
