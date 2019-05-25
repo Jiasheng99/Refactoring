@@ -18,15 +18,15 @@ class TestClientInforme {
 	private Lloguer lloguerLuxe;
 	private Client clientLuxe;
 	
-	private static final String clientInforme = "Informe de lloguers del client Jiasheng (X5189927T)\r\n" + 
-			"	Vista Tata: 90.0€\r\n" + 
-			"	Visita Tato: 120.0€\r\n" + 
-			"	Visa Tinta: 360.0€\r\n" + 
-			"Import a pagar: 570.0€\r\n" + 
-			"Punts guanyats: 4";
-	private static final String clientInforme2 = "Informe de lloguers del client Jiasheng (X5189927T)\r\n" + 
-			"Import a pagar: 0.0€\r\n" + 
-			"Punts guanyats: 0";
+	private static final String clientInforme = "Informe de lloguers del client Jiasheng (X5189927T)\n" + 
+			"	Vista Tata: 90.0€\n" + 
+			"	Visita Tato: 120.0€\n" + 
+			"	Visa Tinta: 360.0€\n" + 
+			"Import a pagar: 570.0€\n" + 
+			"Punts guanyats: 4\n";
+	private static final String clientInforme2 = "Informe de lloguers del client Jiasheng (X5189927T)\n" + 
+			"Import a pagar: 0.0€\n" + 
+			"Punts guanyats: 0\n";
 	
 	@Test
 	public void InformeTODO() throws ParseException {
@@ -47,7 +47,7 @@ class TestClientInforme {
 		System.out.println(clientInforme);
 		System.out.println(clientLuxe.informe());
 		//No se si esta bien, con el assertEquals no me sale
-		assertEqual(clientInforme, clientLuxe.informe());
+		assertEquals(clientInforme, clientLuxe.informe());
 	}
 	
 	@Test
@@ -56,13 +56,9 @@ class TestClientInforme {
 		System.out.println(clientInforme2);
 		System.out.println(clientLuxe.informe());
 		//No se si esta bien, con el assertEquals no me sale
-		assertEqual(clientInforme2, clientLuxe.informe());
+		assertEquals(clientInforme2, clientLuxe.informe());
 	}	
 	
-	private void assertEqual(String clientInforme, String informe) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public static void main(String args[]) {
         org.junit.runner.JUnitCore.main("TestClientInforme");
