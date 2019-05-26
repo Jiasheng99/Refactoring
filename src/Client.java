@@ -49,7 +49,7 @@ public class Client {
                 lloguer.getVehicle().getMarca() +
                 " " +
                 lloguer.getVehicle().getModel() + ": " +
-                (lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
+                (lloguer.PreuVehicle() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
         }
 
         // afegeix informació final
@@ -61,7 +61,7 @@ public class Client {
     public double importTotal() {
         double total = 0;
         for (Lloguer lloguer: lloguers) {
-        	total += lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST;
+        	total += lloguer.PreuVehicle() * EUROS_PER_UNITAT_DE_COST;
         }
         return total;
     }
