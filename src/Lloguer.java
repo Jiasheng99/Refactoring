@@ -6,6 +6,13 @@ public class Lloguer {
 	private Date data;
     private Integer dies;
     private Vehicle vehicle;
+    private static final double EUROS_PER_UNITAT_DE_COST_BASIC = 3;
+    private static final double EUROS_PER_UNITAT_DE_COST_GENERAL = 4;
+    private static final double DIES_INICI_VEHICLE_BASIC = 3;
+    private static final double DIES_INICI_VEHICLE_GENERAL = 2;
+    private static final double EUROS_PER_DIES_INICI_VEHICLE_BASIC = 1.5;
+    private static final double EUROS_PER_DIES_INICI_VEHICLE_GENERAL = 2.5;
+    private static final double EUROS_PER_DIES_INICI_VEHICLE_LUXE = 6;
     
 	public Lloguer(Date data, int dies, Vehicle vehicle) {
 		this.data = data;
@@ -41,19 +48,19 @@ public class Lloguer {
     	double quantitat = 0;
         switch (getVehicle().getCategoria()) {
             case Vehicle.BASIC:
-                quantitat += 3;
-                if (getDies() > 3) {
-                    quantitat += (getDies() - 3) * 1.5;
+                quantitat += EUROS_PER_UNITAT_DE_COST_BASIC;
+                if (getDies() > DIES_INICI_VEHICLE_BASIC) {
+                    quantitat += (getDies() - DIES_INICI_VEHICLE_BASIC) * EUROS_PER_DIES_INICI_VEHICLE_BASIC;
                 }
                 break;
             case Vehicle.GENERAL:
-                quantitat += 4;
-                if (getDies() > 2) {
-                    quantitat += (getDies() - 2) * 2.5;
+                quantitat += EUROS_PER_UNITAT_DE_COST_GENERAL;
+                if (getDies() > DIES_INICI_VEHICLE_GENERAL) {
+                    quantitat += (getDies() - DIES_INICI_VEHICLE_GENERAL) * EUROS_PER_DIES_INICI_VEHICLE_GENERAL;
                 }
                 break;
             case Vehicle.LUXE:
-                quantitat += getDies() * 6;
+                quantitat += getDies() * EUROS_PER_DIES_INICI_VEHICLE_LUXE;
                 break;
         }
         return quantitat;
