@@ -58,6 +58,22 @@ public class Client {
         return resultat;
     }
     
+    public String informeHTML() {
+    	String resultat = "<h1>Informe de lloguers</h1>\n" +
+    			"<p>Informe de lloguers del client <em>"+getNom()+"</em> (<strong>"+getNif()+"</strong>)</p>\n" +
+    			"<table>\n" +
+    			"<tr><td><strong>Marca</strong></td><td><strong>Model</strong></td><td><strong>Import</strong></td></tr>";
+    	for (Lloguer lloguer: lloguers) {
+    		resultat += "\t" + "<tr><td>" +
+			lloguer.getVehicle().getMarca() + "</td><td>" +
+            lloguer.getVehicle().getModel() + "</td><td>" +
+            (lloguer.PreuVehicle() * EUROS_PER_UNITAT_DE_COST) + "€" + "</td></tr>\n";
+    	}
+    	resultat += "<p>Import a pagar: <em>"+importTotal()+"</em></p>" +
+    			"<p>Punts guanyats: <em>"+bonificacionsTotals()+"</em></p>";
+    	return resultat;
+    }
+    
     public double importTotal() {
         double total = 0;
         for (Lloguer lloguer: lloguers) {
